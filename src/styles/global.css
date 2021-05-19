@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-body {
-  background-image: linear-gradient(to right, rgb(218, 212, 248), rgb(156, 162, 218));
-}
-
 p, span, h1, h2, h3, h4, h5, h6 {
   font-family: 'Gothic A1', sans-serif;
 }
