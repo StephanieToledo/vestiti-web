@@ -13,7 +13,7 @@ export const ContainerFeed = styled.div`
   height: inherit;
   display: flex;
   justify-content: center;
-  margin-top: 9em;
+  margin-top: 8em;
   background-image: linear-gradient(to right, rgb(216, 210, 247), rgb(124, 130, 182));
   border-radius: 0px 0px 200px 200px;  
   color: #252126;
@@ -45,7 +45,7 @@ export const ContainerHome = styled.div`
 
   @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: green }
+    50% { border-color: #D8C8CB }
   }
 
   span {
