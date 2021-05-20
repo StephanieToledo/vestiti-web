@@ -6,7 +6,7 @@ import {
 import Icon from '../../assets/images/icon.png';
 import Search from '../../assets/images/search.png';
 import Cart from '../../assets/images/cart.png';
-import Favorite from '../../assets/images/favorite.png';
+import Favorite from '../../assets/images/favorite-none.png';
 
 function Header() {
 	return(

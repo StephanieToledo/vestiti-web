@@ -40,10 +40,11 @@ export const Menu = styled.div`
     color: #4D2059;
     cursor: pointer;
     padding: 0.5rem;
-    border: 0;
     transition: all 0.5s;
     border-radius: 10px;
     min-width: 110px;
+    border: none;
+    outline:none;
 
     &::after {
       position: absolute;
@@ -58,7 +59,7 @@ export const Menu = styled.div`
       background: #E5DDFB;
       transition: 0.6s;
       border-radius: 10px;
-      box-shadow: 0px 3px 6px #0000ff61;
+      box-shadow: 0px 3px 4px #0000ff61;
 
       &::after {
           opacity: 1;

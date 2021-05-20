@@ -21,7 +21,7 @@ export const ContainerFeed = styled.div`
 
 export const ContainerHome = styled.div`
   width: inherit;
-  height: 50px;
+  height: 90px;
   text-align: center;
   margin-top: 11rem;
 
@@ -31,6 +31,7 @@ export const ContainerHome = styled.div`
     overflow: hidden; 
     border-right: .10em solid orange;
     white-space: nowrap;
+    margin-bottom: 20px;
     margin-left: 1em;
     letter-spacing: .10em;
     animation: 
