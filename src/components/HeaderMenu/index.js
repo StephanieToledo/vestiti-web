@@ -1,18 +1,20 @@
 import { 
+	cart, 
+	favorite, 
+	icon, 
+	search 
+} from '../../utils/icons';
+import { 
 	ContainerHeader, 
 	ContentLogo, 
 	Menu 
 } from './style';
-import Icon from '../../assets/images/icon.png';
-import Search from '../../assets/images/search.png';
-import Cart from '../../assets/images/cart.png';
-import Favorite from '../../assets/images/favorite-none.png';
 
 function HeaderMenu() {
 	return(
 		<ContainerHeader>
 			<ContentLogo>
-				<img src={Icon} alt="Ícone"/>
+				<img src={icon} alt="Ícone"/>
 			</ContentLogo>
 
 			<Menu>
@@ -21,9 +23,9 @@ function HeaderMenu() {
 				<div>CONTATO</div>
 				<button className="login">LOGIN</button>
 				<button className="register">CADASTRO</button>
-        <img src={Search} alt="Pesquisa"/>
-        <img src={Favorite} alt="Favoritos"/>
-        <img src={Cart} alt="Carrinho"/>
+        <img src={search} alt="Pesquisa"/>
+        <img src={favorite} alt="Favoritos"/>
+        <img src={cart} alt="Carrinho"/>
 			</Menu>
 		</ContainerHeader>
 	)

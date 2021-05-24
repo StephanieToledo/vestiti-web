@@ -1,10 +1,10 @@
+import { imageHome } from '../../utils/icons';
 import { 
   Container, 
   ContainerHome, 
   ContainerImage, 
   ContainerFeed 
 } from './style';
-import ImageHome from '../../assets/images/home-2.jpg';
 
 function Header() {
   return (
@@ -15,7 +15,7 @@ function Header() {
           <span><i>Check out our news!</i></span>
         </ContainerHome>
         <ContainerImage>
-          <img src={ImageHome} alt="Moda"/>
+          <img src={imageHome} alt="Moda"/>
         </ContainerImage>
       </ContainerFeed>
     </Container>
