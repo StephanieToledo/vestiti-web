@@ -22,10 +22,13 @@ function HeaderMenu() {
 				<Link to="/" style={{ textDecoration: 'none' }}>
 					<div>INICIO</div>
 				</Link>
-				<div>COMPRAR</div>
 				<div>CONTATO</div>
-				<button className="login">LOGIN</button>
-				<button className="register">CADASTRO</button>
+				<Link to="/" style={{ textDecoration: 'none' }}>
+					<div className="login">LOGIN</div>
+				</Link>
+				<Link to="/register" style={{ textDecoration: 'none' }}>
+					<div className="login">CADASTRO</div>
+				</Link>
         <img src={search} alt="Pesquisa"/>
         <img src={favorite} alt="Favoritos"/>
         <img src={cart} alt="Carrinho"/>

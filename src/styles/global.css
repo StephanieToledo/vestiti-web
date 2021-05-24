@@ -3,6 +3,6 @@
   padding: 0;
 }
 
-p, span, button, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gothic A1', sans-serif;
+p, span, button, h1, h2, h3, h4, h5, h6, label, input {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

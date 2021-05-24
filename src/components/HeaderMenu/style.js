@@ -35,16 +35,49 @@ export const Menu = styled.div`
     transition: 0.6s;
   }
 
-  button {  
-    background: #B6B4DF;
+  .login { 
     color: #4D2059;
     cursor: pointer;
     padding: 0.5rem;
     transition: all 0.5s;
     border-radius: 10px;
-    min-width: 110px;
+    min-width: 70px;
     border: none;
     outline:none;
+    text-align: center;
+
+    &::after {
+    position: absolute;
+    top: 54%;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+    background: #E5DDFB;
+    transition: 0.6s;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(163,156,254,0.93);
+
+      &::after {
+      opacity: 1;
+      transition: 0.6s;
+      color: #ffffff;
+    }
+  }
+}
+
+   .register {
+      color: #4D2059;
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: all 0.5s;
+      border-radius: 10px;
+      min-width: 70px;
+      border: none;
+      outline:none;
 
     &::after {
       position: absolute;
@@ -62,20 +95,12 @@ export const Menu = styled.div`
       box-shadow: 1px 1px 1px 1px rgba(163,156,254,0.93);
 
       &::after {
-          opacity: 1;
-          transition: 0.6s;
-          color: #ffffff;
+        opacity: 1;
+        transition: 0.6s;
+        color: #ffffff;
       }
     }
-}
-
-  .login { 
-    background: #EAE2FD;
-   }
-
-   .register {
-    background: #E4DCFB;
-   }
+  }
 
    img {
      width: 1.5em;
