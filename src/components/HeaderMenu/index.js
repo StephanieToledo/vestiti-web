@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { 
 	cart, 
 	favorite, 
@@ -18,7 +19,9 @@ function HeaderMenu() {
 			</ContentLogo>
 
 			<Menu>
-				<div>INICIO</div>
+				<Link to="/" style={{ textDecoration: 'none' }}>
+					<div>INICIO</div>
+				</Link>
 				<div>COMPRAR</div>
 				<div>CONTATO</div>
 				<button className="login">LOGIN</button>

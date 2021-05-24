@@ -1,9 +1,9 @@
-import HomePage from './pages/Home';
+import Routes from './routes';
 import './styles/global.css';
 
 function App() {
   return (
-    <HomePage />
+    <Routes />
   );
 }
 

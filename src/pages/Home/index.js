@@ -9,10 +9,10 @@ function HomePage() {
   return (
     <Container>
       <HeaderMenu />
-     <Header />
-     <CardInitial />
-     <HomeCard />
-     <Footer />
+      <Header />
+      <CardInitial />
+      <HomeCard />
+      <Footer />
     </Container>
   )
 }
