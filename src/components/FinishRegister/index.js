@@ -1,15 +1,31 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Container, ContainerFinishRegister } from "./style";
+import { completedIcon } from '../../utils/icons';
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 function FinishRegister() {
   
   const state = useSelector(state => state)
 
+  const history = useHistory();
+
+  useEffect(() => {
+   setTimeout(() => {
+      history.push("/");
+    }, 3000);
+  });
+
   return (
-    <>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
-      <Link to="/">Fazer Login</Link>
-    </>
+    <Container>
+      <ContainerFinishRegister>
+        <img src={completedIcon} alt="Concluído"></img>
+        <div className="content">
+          <h2>Conta criada com sucesso!</h2>
+          <span>Você será redirecionado para o Login...</span>
+        </div>
+      </ContainerFinishRegister>
+    </Container>
   )
 }
 

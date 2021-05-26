@@ -33,37 +33,48 @@ function RegisterForm() {
     <Container>
       <Register>
         <ContentRegister>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="name">Nome:</label>
-            <input 
-              id="name" 
-              className="name" 
-              {...register('name', { required: true })}>
-            </input>
+          <div className="form">
+            <h2>Criar Conta</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="container-step-zero">
+              <label htmlFor="name">Nome:</label>
+              <input 
+                id="name" 
+                type="text"
+                className="name"
+                maxLength="50"
+                {...register('name', { required: true })}>
+              </input>
 
-            <label htmlFor="email">Email:</label>
-            <input 
-              id="email" 
-              className="email" 
-              {...register('email', { required: true })}>
-            </input>
+              <label htmlFor="email">Email:</label>
+              <input 
+                id="email" 
+                type="text"
+                className="email"
+                maxLength="100"
+                {...register('email', { required: true })}>
+              </input>
 
-            <label htmlFor="cpf">CPF:</label>
-            <input 
-              id="cpf" 
-              className="cpf" 
-              {...register('cpf', { required: true })}>
-            </input>
+              <label htmlFor="cpf">CPF:</label>
+              <input 
+                id="cpf"
+                type="number" 
+                className="cpf"
+                maxLength="15"
+                {...register('cpf', { required: true })}>
+              </input>
 
-            <label htmlFor="phone">Celular:</label>
-            <input 
-              id="phone" 
-              className="phone" 
-              {...register('phone', { required: true })}>
-            </input>
+              <label htmlFor="phone">Celular:</label>
+              <input 
+                id="phone" 
+                type="tel"
+                className="phone"
+                maxLength="11"
+                {...register('phone', { required: true })}>
+              </input>
 
-            <button>CONTINUAR</button>
-          </form>
+              <button>CONTINUAR</button>
+            </form>
+          </div>
         </ContentRegister>
       </Register>
       <ContentImage>

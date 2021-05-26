@@ -56,10 +56,9 @@ export const Menu = styled.div`
     }
 
     &:hover {
-    background: #E5DDFB;
     transition: 0.6s;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(163,156,254,0.93);
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px 1px #E9E0FC;
 
       &::after {
       opacity: 1;

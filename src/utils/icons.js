@@ -13,7 +13,10 @@ import clote from '../assets/images/home-7.jpg';
 import shirt from '../assets/images/home-8.jpg';
 import overalls from '../assets/images/home-9.jpg';
 import skirt from '../assets/images/home-10.jpg';
-import imageRegister from '../assets/images/register.png';
+import imageRegister from '../assets/images/home-11.jpeg';
+import imageRegisterStepTwo from '../assets/images/home-4.jpg';
+import imageRegisterStepTree from '../assets/images/home-12.jpeg';
+import completedIcon from '../assets/images/completed-icon.png';
 
 export {
   promotionJeans,
@@ -31,5 +34,8 @@ export {
   shirt,
   overalls,
   skirt,
-  imageRegister
+  imageRegister,
+  imageRegisterStepTwo,
+  imageRegisterStepTree,
+  completedIcon
 }
