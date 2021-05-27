@@ -2,7 +2,7 @@ import { React } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { newCpf, newEmail, newName, newPhone } from '../../stores/state';
+import { newCpf, newEmail, newName, newPhone } from '../../store/state';
 import { imageRegister } from '../../utils/icons';
 import {
   Container,

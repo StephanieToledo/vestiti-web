@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Container, ContainerFinishRegister } from "./style";
 import { completedIcon } from '../../utils/icons';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router";
 
 function FinishRegister() {
