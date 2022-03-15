@@ -1,85 +1,100 @@
 import { React } from 'react';
-import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
-import { newAddress, newCep, newCity, newNeighborhood } from '../../store/state';
+import { Form, Input, Button } from 'antd';
 import { imageRegister } from '../../utils/icons';
-import {
-  Register,
-  ContentImage
-} from '../Register/style';
 import { 
   Container, 
-  ContainerRegister, 
-  ContentRegister 
+  Register, 
+  FormTwo,
+  ContentImage
 } from './style';
+import { MaskedInput } from 'antd-mask-input';
+import api from '../../services/api';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function RegisterForm() {
 
-  const dispatch = useDispatch()
-  const history = useHistory()
-  const cep = useSelector(state => state.cep)
-  const address = useSelector(state => state.address)
-  const neighborhood = useSelector(state => state.neighborhood)
-  const city = useSelector(state => state.city)
-  const { register, handleSubmit } = useForm({ defaultValues: { cep, address, neighborhood, city } })
+  const [form] = Form.useForm();
 
-  const onSubmit = (data) => {
-    dispatch(newCep(data.cep))
-    dispatch(newAddress(data.address))
-    dispatch(newNeighborhood(data.neighborhood))
-    dispatch(newCity(data.city))
-    history.push("./register-step-tree")
+  const onSubmit = () => {
+    form.
+      validateFields()
+      .then( async (values) => {
+        const payload = {
+          ...JSON.parse(localStorage.getItem('stepOne')),
+          ...values
+        }
+        toast.promise(api.post('/register', payload), {
+          pending: 'Salvando dados',
+          success: 'Cadastrado concluído com sucesso',
+          error: 'Erro ao salvar dados, tente novamente'
+        },
+        {
+          onClose: () => window.location.href='/'
+        }
+        )
+      })
   }
 
   return(
+    <>
     <Container>
-      <ContainerRegister>
-        <Register>
-          <ContentRegister>
-            <div className="form">
-              <h2>Criar Conta</h2>
-              <form onSubmit={handleSubmit(onSubmit)} className="container-step-two">
-                <label htmlFor="cep">Cep:</label>
-                <input 
-                  id="cep" 
-                  className="cep"
-                  type="number"
-                  {...register('cep', { required: true })}>
-                </input>
-
-                <label htmlFor="address">Rua:</label>
-                <input 
-                  id="address"
-                  className="address" 
-                  {...register('address', { required: true })}>
-                </input>
-
-                <label htmlFor="neighborhood">Bairro:</label>
-                <input 
-                  id="neighborhood" 
-                  className="neighborhood" 
-                  {...register('neighborhood', 
-                  { required: true })}>
-                </input>
-
-                <label htmlFor="city">Cidade:</label>
-                <input 
-                  id="city" 
-                  className="city" 
-                  {...register('city', { required: true })}>
-                </input>
-
-                <button>CONTINUAR</button>
-              </form>
-            </div>
-          </ContentRegister>
-        </Register>
-        <ContentImage>
-          <img src={imageRegister} alt="Cadastro"/>
-        </ContentImage>
-      </ContainerRegister>
+      <Register>
+        <FormTwo>
+          <Form className="container-form" name='step-two' form={form} onFinish={onSubmit}>
+            <Form.Item 
+              name="cep"
+              className="label"
+              label="CEP"
+            >
+              <MaskedInput
+               className="input" 
+               required 
+               mask="11111-111"
+               />
+            </Form.Item>
+            <Form.Item 
+              name="address"
+              className="label"
+              label="Endereço"
+            >
+              <Input className="input" required />
+            </Form.Item>
+            <Form.Item 
+              name="neighborhood"
+              className="label"
+              label="Bairro"
+            >
+              <Input className="input" required />
+            </Form.Item>
+            <Form.Item 
+              name="number"
+              className="label"
+              label="Número"
+            >
+              <Input className="input" required />
+            </Form.Item>
+            <Form.Item 
+              name="uf"
+              className="label"
+              label="Estado"
+            >
+              <Input className="input" required maxLength={2} />
+            </Form.Item>
+            <Form.Item>
+              <Button htmlType="submit" className='button-submit'>
+                CRIAR CONTA
+              </Button>
+            </Form.Item>
+          </Form>
+        </FormTwo>
+      </Register>
+      <ContentImage>
+        <img src={imageRegister} alt="Cadastro"/>
+      </ContentImage>
     </Container>
+  <ToastContainer>  </ToastContainer>
+  </>
   )
 }
 

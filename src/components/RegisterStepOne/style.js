@@ -18,7 +18,7 @@ export const Register = styled.div`
   margin-left: 120px;
 `;
 
-export const FormTwo = styled.div`
+export const FormOne = styled.div`
   width: 50%;
   height: inherit;
   justify-content: center;
@@ -65,6 +65,7 @@ export const FormTwo = styled.div`
     background-color: black;
     color: white;
     cursor: pointer;
+    margin-top: 10px;
   }
 `;
 
@@ -77,3 +78,8 @@ export const ContentImage = styled.image`
     border-radius: 0 20px 20px 0;
   }
 `;
+
+
+
+
+

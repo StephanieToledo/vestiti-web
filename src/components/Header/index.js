@@ -1,23 +1,21 @@
-import { imageHome } from '../../utils/icons';
 import { 
-  Container, 
-  ContainerHome, 
-  ContainerImage, 
-  ContainerFeed 
+  Container,
+  ContainerImage,
+  ContainerText
 } from './style';
+import imgBack from '../../assets/images/back.jpg';
+import { Button } from 'antd';
 
 function Header() {
   return (
     <Container>
-      <ContainerFeed>
-        <ContainerHome>
-          <h1>The Best Online Store for your Shopping</h1>
-          <span><i>Check out our news!</i></span>
-        </ContainerHome>
-        <ContainerImage>
-          <img src={imageHome} alt="Moda"/>
-        </ContainerImage>
-      </ContainerFeed>
+      <ContainerText>
+          <h2>Fashion as You Want</h2>
+          <Button className='button-busy'>COMPRE AGORA</Button>
+      </ContainerText>
+      <ContainerImage>
+        <img src={imgBack}/>
+      </ContainerImage>
     </Container>
   )
 }

@@ -8,33 +8,35 @@ import {
 import { 
 	ContainerHeader, 
 	ContentLogo, 
-	Menu 
+	ContainerMenu 
 } from './style';
 
-function HeaderMenu() {
+function Menu() {
 	return(
 		<ContainerHeader>
 			<ContentLogo>
 				<img src={icon} alt="Ícone"/>
 			</ContentLogo>
 
-			<Menu>
+			<ContainerMenu>
 				<Link to="/" style={{ textDecoration: 'none' }}>
-					<div>INICIO</div>
+					<h4>INICIO</h4>
 				</Link>
-				<div>CONTATO</div>
 				<Link to="/" style={{ textDecoration: 'none' }}>
-					<div className="login">LOGIN</div>
+					<h4>CONTATO</h4>
 				</Link>
-				<Link to="/register" style={{ textDecoration: 'none' }}>
-					<div className="login">CADASTRO</div>
+				<Link to="/" style={{ textDecoration: 'none' }}>
+					<h4>LOGIN</h4>
+				</Link>
+				<Link to="/register-step-one" style={{ textDecoration: 'none' }}>
+					<h4>CADASTRO</h4>
 				</Link>
         <img src={search} alt="Pesquisa"/>
         <img src={favorite} alt="Favoritos"/>
         <img src={cart} alt="Carrinho"/>
-			</Menu>
+			</ContainerMenu>
 		</ContainerHeader>
 	)
 }
 
-export default HeaderMenu;
+export default Menu;

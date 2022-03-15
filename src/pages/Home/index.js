@@ -1,6 +1,6 @@
 import { Container } from './style';
 import Header from '../../components/Header';
-import HeaderMenu from '../../components/HeaderMenu';
+import Menu from '../../components/Menu';
 import CardInitial from '../../components/CardInitial';
 import HomeCard from '../../components/HomeCard';
 import Footer from '../../components/Footer';
@@ -8,7 +8,7 @@ import Footer from '../../components/Footer';
 function HomePage() {
   return (
     <Container>
-      <HeaderMenu />
+      <Menu />
       <Header />
       <CardInitial />
       <HomeCard />

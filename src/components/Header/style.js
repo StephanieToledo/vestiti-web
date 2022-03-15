@@ -2,66 +2,51 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 450px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
 `; 
 
-export const ContainerFeed = styled.div`
-  width: 100%;
-  height: inherit;
+export const ContainerText = styled.div`
+  position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 8em;
-  background-image: linear-gradient(to right, rgb(216, 210, 247), rgb(124, 130, 182));
-  border-radius: 0px 0px 200px 200px;  
-  color: #252126;
-`;
+  align-items: left;
+  width: 300px;
+  height: 200px;
+  right: 100px;
+  top: 180px;
 
-export const ContainerHome = styled.div`
-  width: inherit;
-  height: 90px;
-  text-align: center;
-  margin-top: 11rem;
-
-  h1 {
-    font-size: 37px;
-    color: #fff;
-    overflow: hidden; 
-    border-right: .10em solid orange;
-    white-space: nowrap;
-    margin-bottom: 20px;
-    margin-left: 1em;
-    letter-spacing: .10em;
-    animation: 
-      typing 3.5s steps(30, end),
-      blink-caret .5s step-end infinite;
+  h2 {
+    font-size: 30px;
+    color: white;
+    letter-spacing: 4px;
   }
 
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  .button-busy {
+    width: 150px;
+    border: none;
+    height: 35px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background-color: #A38326;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    :hover {
+      cursor: pointer;
+    }
   }
+`
 
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #D8C8CB }
-  }
-
-  span {
-    font-size: 19px;
-    color: #F2F3F5;
-    letter-spacing: .10em;
-  }
-`;
-
-export const ContainerImage = styled.div`
-
+export const ContainerImage = styled.image`
+  width: 100%;
   img {
-    width: 95%;
-    height: 100%;
-    float: right;
-    border-radius: 0px 0px 200px 0px; 
+    width: 100%;
+    height: 500px;
+    border-radius: 0px 0px 150px 150px;
   }
 `;
