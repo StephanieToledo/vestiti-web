@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	max-width: 95%;
+	max-width: 90%;
 	height: auto;
 	margin-bottom: 2em;
 	display: flex;
@@ -14,67 +14,70 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-	width: 17em;
-	height: 450px;
+	width: 300px;
+	height: 470px;
 	border: 1px solid;
 	border-color: #BFBFBF;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	margin: 0.6em;
+
+	.favorite {
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		position: relative;
+		left: 270px;
+		top: 10px;
+	}
+
+	.cart {
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		position: relative;
+		left: 260px;
+	} 
 `;
 
 export const Image = styled.div`
 	width: inherit;
-	height: 330px;
-
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
 	.image {
-		width: 15em;
-		height: 300px;
-		padding-top: 0.7em;
-		margin-left: 1rem;
+		width: 250px;
+		height: 330px;
+		margin-top: 40px;
 		cursor: pointer;
-	}
-
-	.image:hover {
-		transition: 1s;
-		-webkit-transform: scale(1.1);
-		-moz-transform: scale(1.1);
-		-o-transform: scale(1.1);
-		-ms-transform: scale(1.1);
-		transform: scale(1.1);
-	}
-
-	.favorite {
-		width: 8%;
-		height: 25px;
-		float: right;
-		margin-right: 0.6em;
-		margin-top: 0.4em;
-		cursor: pointer;
+		:hover {
+			transition: 1s;
+			-webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			transform: scale(1.1);
+		}
 	}
 
 	.container-price-cart {
 		width: 100%;
-		height: 60px;
-		display: flex;
-		justify-content: space-between;
+		height: 150px;
+		text-align: center;
 	}
 
 	h3 {
-		width: 100px;
-		max-width: auto;
-		height: 30px;
-		margin: auto;
-		margin-left: 5.1em;
-		margin-top: 2em;
 		color: #4D2059;
+		text-align: center;
 	}
 
-	.cart {
-		width: 2em;
-		height: 30px;
-		margin-right: 10px;
-		margin-top: 3.5em;
-		cursor: pointer;
+	h4 {
+		text-align: center;
+		height: 60px;
+		line-height: 60px;
+		text-decoration: line-through;
+		color: red;
 	}
 `;

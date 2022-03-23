@@ -4,7 +4,8 @@ export const ContainerHeader = styled.div`
   width: 100%;
   height: 65px;
   background: radial-gradient(circle, #F5EBFF 50%, #888A8D 100%);
-  position: absolute;
+  position: fixed;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
 `;
@@ -40,5 +41,32 @@ export const ContainerMenu = styled.div`
    img {
     width: 1.5em;
     cursor: pointer;
+   }
+
+   .container-carr {
+     width: 30px;
+     height: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: row-reverse;
+   }
+
+   .quantity {
+     width: 20px;
+     height: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50px;
+     background-color: #342940;
+     position: absolute;
+     right: 70px;
+     top: 15px;
+   }
+
+   p {
+     font-size: 11px;
+     color: white;
    }
 `;

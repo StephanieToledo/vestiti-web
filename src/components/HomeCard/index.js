@@ -1,12 +1,8 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import {
-	cartHome, 
-	clote, 
-	dress, 
-	iconFavoriteNove, 
-	jeans, 
-	overalls, 
-	shirt, 
-	skirt 
+	cartHome,
+	iconFavoriteNove,
 } from '../../utils/icons';
 import { 
 	Container, 
@@ -14,69 +10,34 @@ import {
 	Image } 
 from './style';
 
-function HomeCard() {
+function HomeCard({products}) {
+
+	const dispatch = useDispatch();
+
+	function addProduct(product) {
+		const car = JSON.parse(localStorage.getItem('products')) || [];
+		const objectSave = [...car, product];
+		localStorage.setItem('products', JSON.stringify(objectSave));
+		dispatch({ type: 'ADD_PRODUCT', product: objectSave });
+	}
+
 	return (
 		<Container>
-			<Card>
-				<Image>
-					<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
-					<img className="image" src={jeans} alt="Calça Jeans" />
-					<div className="container-price-cart">
-						<h3>R$ 200,00</h3>
-						<img className="cart" src={cartHome} alt="Carrinho" />
-					</div>
-				</Image>
-			</Card>
-			<Card>
-				<Image>
-					<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
-					<img className="image" src={dress} alt="Vestido" />
-					<div className="container-price-cart">
-						<h3>R$ 100,00</h3>
-						<img className="cart" src={cartHome} alt="Carrinho" />
-					</div>
-				</Image>
-			</Card>
-			<Card>
-				<Image>
-					<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
-					<img className="image" src={clote} alt="Blusa" />
-					<div className="container-price-cart">
-						<h3>R$ 270,00</h3>
-						<img className="cart" src={cartHome} alt="Carrinho" />
-					</div>
-				</Image>
-			</Card>
-			<Card>
-				<Image>
-					<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
-					<img className="image" src={overalls} alt="Macacão" />
-					<div className="container-price-cart">
-						<h3>R$ 270,00</h3>
-						<img className="cart" src={cartHome} alt="Carrinho" />
-					</div>
-				</Image>
-			</Card>
-			<Card>
-				<Image>
-					<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
-					<img className="image" src={shirt} alt="Camisa" />
-					<div className="container-price-cart">
-						<h3>R$ 70,00</h3>
-						<img className="cart" src={cartHome} alt="Carrinho" />
-					</div>
-				</Image>
-			</Card>
-			<Card>
-				<Image>
-					<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
-					<img className="image" src={skirt} alt="Saia" />
-					<div className="container-price-cart">
-						<h3>R$ 65,00</h3>
-						<img className="cart" src={cartHome} alt="Carrinho" />
-					</div>
-				</Image>
-			</Card>
+				{products.map(product => 
+					<Card>
+						<img className="favorite" src={iconFavoriteNove} alt="Favoritar" />
+						<Image>
+							<img className="image" id="img" src={product.image} alt="Calça Jeans" />
+							<div className="container-price-cart">
+								<h4>R$ {product.oldPrice}</h4>
+								<h3>R$ {product.price}</h3>
+							</div>
+						</Image>
+						<div onClick={() => addProduct(product)}>
+							<img className="cart" src={cartHome} alt="Carrinho" />
+						</div>
+					</Card>
+				)}
 		</Container>
 	)
 }
