@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { 
-	cart, 
-	favorite, 
+	cart,
 	icon, 
+	iconFavoriteNone, 
 	search 
 } from '../../utils/icons';
 import { 
@@ -14,7 +14,8 @@ import {
 
 function Menu() {
 
-	const products = useSelector(state => state.data);
+	const products = useSelector(state => state.products.data);
+	const favorites = useSelector(state => state.favorites.data);
 
 	return(
 		<ContainerHeader>
@@ -36,7 +37,10 @@ function Menu() {
 					<h4>CADASTRO</h4>
 				</Link>
         <img src={search} alt="Pesquisa"/>
-        <img src={favorite} alt="Favoritos"/>
+        <img src={iconFavoriteNone} alt="Favoritos"/>
+				<div className="favorites">
+					<p>{favorites.length}</p>
+				</div>
 				<div className="container-carr">
         	<img src={cart} alt="Carrinho"/>
 					<div className="quantity">

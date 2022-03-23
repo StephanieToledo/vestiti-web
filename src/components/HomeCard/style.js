@@ -9,7 +9,8 @@ export const Container = styled.div`
 	justify-content: space-around;
 	flex-wrap: wrap;
 	margin-top: 1em;
-	margin-left: 2.5%;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #FCFCFC;
 `;
 
@@ -23,7 +24,16 @@ export const Card = styled.div`
 
 	.favorite {
 		width: 20px;
-		height: 20px;
+		height: 23px;
+		cursor: pointer;
+		position: relative;
+		left: 270px;
+		top: 10px;
+	}
+
+	.favoriteNone {
+		width: 20px;
+		height: 23px;
 		cursor: pointer;
 		position: relative;
 		left: 270px;
@@ -54,11 +64,7 @@ export const Image = styled.div`
 		cursor: pointer;
 		:hover {
 			transition: 1s;
-			-webkit-transform: scale(1.1);
-			-moz-transform: scale(1.1);
-			-o-transform: scale(1.1);
-			-ms-transform: scale(1.1);
-			transform: scale(1.1);
+			transform: scale(1.05);
 		}
 	}
 

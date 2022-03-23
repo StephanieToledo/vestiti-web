@@ -23,6 +23,7 @@ function HomePage() {
       await getProducts();
     }
     dispatch({ type: 'ADD_PRODUCT', product: JSON.parse(localStorage.getItem('products')) || []});
+    dispatch({ type: 'ADD_FAVORITE', favorite: JSON.parse(localStorage.getItem('favorites')) || []});
     loadProducts();
   },[]);
 

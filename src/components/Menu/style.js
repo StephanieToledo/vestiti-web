@@ -52,6 +52,19 @@ export const ContainerMenu = styled.div`
      flex-direction: row-reverse;
    }
 
+   .favorites {
+     width: 20px;
+     height: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50px;
+     background-color: #342940;
+     position: absolute;
+     right: 200px;
+     top: 15px;
+   }
+
    .quantity {
      width: 20px;
      height: 20px;
