@@ -31,7 +31,7 @@ export const Card = styled.div`
 		top: 10px;
 	}
 
-	.favoriteNone {
+	.favorite-none {
 		width: 20px;
 		height: 23px;
 		cursor: pointer;
@@ -46,43 +46,75 @@ export const Card = styled.div`
 		cursor: pointer;
 		position: relative;
 		left: 260px;
+		top: -15px;
 	} 
-`;
 
-export const Image = styled.div`
-	width: inherit;
-	height: 400px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	.flip-card {
+		width: 280px;
+		height: 350px;
+		perspective: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+	}
 	
-	.image {
-		width: 250px;
-		height: 330px;
-		margin-top: 40px;
-		cursor: pointer;
-		:hover {
-			transition: 1s;
-			transform: scale(1.05);
-		}
+	img {
+		width: 280px;
+		height: 350px;
+	}
+
+	.flip-card-inner {
+		position: relative;
+		width: 280px;
+		height: 350px;
+		text-align: center;
+		transition: transform 0.6s;
+		transform-style: preserve-3d;
+		background-color: #F6F9F8;
+	}
+
+	.flip-card:hover .flip-card-inner {
+		transform: rotateY(180deg);
+	}
+
+	.flip-card-front, .flip-card-back {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	.flip-card-front {
+		height: 350px;
+	}
+
+	.flip-card-back {
+		height: 350px;
+		color: #2D3541;
+		transform: rotateY(180deg);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		line-height: 60px;
 	}
 
 	.container-price-cart {
 		width: 100%;
-		height: 150px;
 		text-align: center;
 	}
 
 	h3 {
 		color: #4D2059;
+		line-height: 0px;
 		text-align: center;
 	}
 
 	h4 {
 		text-align: center;
 		height: 60px;
-		line-height: 60px;
+		line-height: 50px;
 		text-decoration: line-through;
 		color: red;
 	}

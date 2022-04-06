@@ -4,6 +4,8 @@ import HomeCard from '../components/HomeCard';
 import Home from '../pages/Home';
 import RegisterStepOne from '../components/RegisterStepOne';
 import RegisterStepTwo from '../components/RegisterStepTwo';
+import RegisterStepThree from '../components/RegisterStepThree';
+import Login from '../components/Login';
 
 const Routes = () => {
   return(
@@ -12,6 +14,8 @@ const Routes = () => {
       <Route component={HomeCard} path="/products" />
       <Route component={RegisterStepOne} path="/register-step-one" />
       <Route component={RegisterStepTwo} path="/register-step-two" />
+      <Route component={RegisterStepThree} path="/register-step-three" />
+      <Route component={Login} path="/login" />
     </BrowserRouter>
   )
 }

@@ -14,7 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 function RegisterForm() {
 
   const [form] = Form.useForm();
-  const [loading, setLoading] = useState(false);
 
   const handleClickNext = () => {
     form

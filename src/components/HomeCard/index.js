@@ -7,8 +7,8 @@ import {
 } from '../../utils/icons';
 import { 
 	Container, 
-	Card,
-	Image } 
+	Card
+} 
 from './style';
 
 function HomeCard({products}) {
@@ -45,18 +45,26 @@ function HomeCard({products}) {
 				<Card>
 					<div onClick={() => addFavorite(product)}>
 						{ favoritesQuantity.filter(favorite => favorite.id === product.id).length ? 
-							<img className="favoriteNone" src={iconFavorite} alt="Favoritar" />
+							<img className="favorite-none" src={iconFavorite} alt="Favoritar" />
 						: 
 							<img className="favorite" src={iconFavoriteNone} alt="Favoritar" />
 						}
 					</div>
-					<Image>
-						<img className="image" id="img" src={product.image} alt="Calça Jeans" />
-						<div className="container-price-cart">
-							<h4>R$ {product.oldPrice}</h4>
-							<h3>R$ {product.price}</h3>
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src={product.image} alt="Avatar" />
+							</div>
+							<div class="flip-card-back">
+								<h2>{product.product}</h2> 
+								<p>{product.description}</p>
+							</div>
 						</div>
-					</Image>
+					</div>
+					<div className="container-price-cart">
+						<h4>R$ {product.oldPrice}</h4>
+						<h3>R$ {product.price}</h3>
+					</div>
 					<div onClick={() => addProduct(product)}>
 						<img className="cart" src={cartHome} alt="Carrinho" />
 					</div>

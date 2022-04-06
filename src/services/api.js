@@ -1,7 +1,11 @@
-import axios from 'axios';
+import * as axios from 'axios'
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: 'http://localhost:8080'
-})
+});
 
-export default api;
+export const apiCep = {
+  async searchCep(cep) {
+    return axios.get(`https://viacep.com.br/ws/${cep}/json`);
+  }
+};

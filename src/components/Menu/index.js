@@ -30,14 +30,14 @@ function Menu() {
 				<Link to="/" style={{ textDecoration: 'none' }}>
 					<h4>CONTATO</h4>
 				</Link>
-				<Link to="/" style={{ textDecoration: 'none' }}>
+				<Link to="/login" style={{ textDecoration: 'none' }}>
 					<h4>LOGIN</h4>
 				</Link>
 				<Link to="/register-step-one" style={{ textDecoration: 'none' }}>
 					<h4>CADASTRO</h4>
 				</Link>
-        <img src={search} alt="Pesquisa"/>
-        <img src={iconFavoriteNone} alt="Favoritos"/>
+				<img src={search} alt="Pesquisa"/>
+				<img src={iconFavoriteNone} alt="Favoritos"/>
 				<div className="favorites">
 					<p>{favorites.length}</p>
 				</div>

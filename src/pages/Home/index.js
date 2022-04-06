@@ -4,7 +4,7 @@ import Menu from '../../components/Menu';
 import CardInitial from '../../components/CardInitial';
 import HomeCard from '../../components/HomeCard';
 import Footer from '../../components/Footer';
-import api from '../../services/api';
+import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
