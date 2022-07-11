@@ -28,16 +28,14 @@ export const Card = styled.div`
 		cursor: pointer;
 		position: relative;
 		left: 270px;
-		top: 10px;
 	}
 
 	.favorite-none {
 		width: 20px;
-		height: 23px;
+		height: 30px;
 		cursor: pointer;
 		position: relative;
 		left: 270px;
-		top: 10px;
 	}
 
 	.cart {
@@ -45,8 +43,6 @@ export const Card = styled.div`
 		height: 30px;
 		cursor: pointer;
 		position: relative;
-		left: 260px;
-		top: -15px;
 	} 
 
 	.flip-card {
@@ -60,7 +56,7 @@ export const Card = styled.div`
 	
 	img {
 		width: 280px;
-		height: 350px;
+		height: 370px;
 	}
 
 	.flip-card-inner {
@@ -97,7 +93,16 @@ export const Card = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		line-height: 60px;
+	}
+
+	p {
+		margin-top: 20px;
+	}
+
+	.content-fav-cart {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
 	}
 
 	.container-price-cart {
@@ -107,14 +112,14 @@ export const Card = styled.div`
 
 	h3 {
 		color: #4D2059;
-		line-height: 0px;
+		line-height: 10px;
 		text-align: center;
 	}
 
 	h4 {
 		text-align: center;
 		height: 60px;
-		line-height: 50px;
+		line-height: 80px;
 		text-decoration: line-through;
 		color: red;
 	}

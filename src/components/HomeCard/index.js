@@ -41,15 +41,8 @@ function HomeCard({products}) {
 
 	return (
 		<Container>
-			{products.map(product => 
+			{products.map(product =>
 				<Card>
-					<div onClick={() => addFavorite(product)}>
-						{ favoritesQuantity.filter(favorite => favorite.id === product.id).length ? 
-							<img className="favorite-none" src={iconFavorite} alt="Favoritar" />
-						: 
-							<img className="favorite" src={iconFavoriteNone} alt="Favoritar" />
-						}
-					</div>
 					<div class="flip-card">
 						<div class="flip-card-inner">
 							<div class="flip-card-front">
@@ -62,11 +55,20 @@ function HomeCard({products}) {
 						</div>
 					</div>
 					<div className="container-price-cart">
-						<h4>R$ {product.oldPrice}</h4>
-						<h3>R$ {product.price}</h3>
+						<h4>R$ {product.old_price}</h4>
+						<h3>R$ {product.actual_price}</h3>
 					</div>
-					<div onClick={() => addProduct(product)}>
-						<img className="cart" src={cartHome} alt="Carrinho" />
+					<div className="content-fav-cart">
+						<div onClick={() => addFavorite(product)}>
+							{ favoritesQuantity.filter(favorite => favorite.id === product.id).length ? 
+								<img className="favorite-none" src={iconFavorite} alt="Favoritar" />
+							: 
+								<img className="favorite" src={iconFavoriteNone} alt="Favoritar" />
+							}
+						</div>
+						<div onClick={() => addProduct(product)}>
+							<img className="cart" src={cartHome} alt="Carrinho" />
+						</div>
 					</div>
 				</Card>
 			)}
