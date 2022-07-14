@@ -41,12 +41,14 @@ function Menu() {
 				<div className="favorites">
 					<p>{favorites.length}</p>
 				</div>
-				<div className="container-carr">
-        	<img src={cart} alt="Carrinho"/>
-					<div className="quantity">
-						<p>{products.length}</p>
+				<Link to="/cart">
+					<div className="container-carr">
+						<img src={cart} alt="Carrinho"/>
+						<div className="quantity">
+							<p>{products.length}</p>
+						</div>
 					</div>
-				</div>
+				</Link>
 			</ContainerMenu>
 		</ContainerHeader>
 	)

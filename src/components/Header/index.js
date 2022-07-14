@@ -14,7 +14,7 @@ function Header() {
           <Button className='button-busy'>COMPRE AGORA</Button>
       </ContainerText>
       <ContainerImage>
-        <img src={imgBack}/>
+        <img src={imgBack} alt=""/>
       </ContainerImage>
     </Container>
   )

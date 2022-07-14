@@ -18,7 +18,6 @@ function products(state = INITIAL_STATE, action) {
 }
 
 function favorites(state = INITIAL_STATE_FAVORITE, action) {
-	console.log(action);
 	switch (action.type) {
 		case 'ADD_FAVORITE':
 			return { ...state, data: action.favorite };

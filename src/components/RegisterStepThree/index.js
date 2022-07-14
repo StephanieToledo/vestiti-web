@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import { imageRegister } from '../../utils/icons';
 import { 
@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function RegisterForm() {
 
   const [form] = Form.useForm();
+  const [passwordValidate, setPasswordValidate] = useState(false);
 
   const onSubmit = () => {
     form.
@@ -24,8 +25,7 @@ function RegisterForm() {
 					...JSON.parse(localStorage.getItem('stepTwo')),
           ...values
         }
-				console.log(payload);
-        toast.promise(api.post('/register', payload), {
+        toast.promise(api.post('/user', payload), {
           pending: 'Salvando dados',
           success: 'Cadastrado concluído com sucesso',
           error: 'Erro ao salvar dados, tente novamente'
@@ -35,6 +35,15 @@ function RegisterForm() {
         }
         )
       })
+  }
+
+  function comparePassword() {
+    const { password, confirmPassword } = form.getFieldsValue();
+
+    if(confirmPassword === password) {
+      return setPasswordValidate(true);
+    }
+    toast.error('As senhas não coincidem', 2);
   }
 
   return(
@@ -48,7 +57,14 @@ function RegisterForm() {
               className="label"
               label="Crie uma senha"
             >
-              <Input className="input" name="password" required type="password" />
+              <Input className="input" name="password" type="password" />
+            </Form.Item>
+            <Form.Item 
+              name="confirmPassword"
+              className="label"
+              label="Confirme a senha"
+            >
+              <Input className="input" name="confirmPassword" onBlur={comparePassword} type="password" />
             </Form.Item>
             <Form.Item>
               <Button htmlType="submit" className='button-submit'>

@@ -6,6 +6,7 @@ import RegisterStepOne from '../components/RegisterStepOne';
 import RegisterStepTwo from '../components/RegisterStepTwo';
 import RegisterStepThree from '../components/RegisterStepThree';
 import Login from '../components/Login';
+import { Cart } from '../pages/Cart';
 
 const Routes = () => {
   return(
@@ -16,6 +17,7 @@ const Routes = () => {
       <Route component={RegisterStepTwo} path="/register-step-two" />
       <Route component={RegisterStepThree} path="/register-step-three" />
       <Route component={Login} path="/login" />
+      <Route component={Cart} path="/cart" />
     </BrowserRouter>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input, Button } from 'antd';
 import MaskedInput from 'antd-mask-input';
 import { imageRegister } from '../../utils/icons';
@@ -10,6 +10,7 @@ import {
 } from './style';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { checkCpf, validateEmail, validateName, validatePhone } from '../../utils/validations';
 
 function RegisterForm() {
 
@@ -17,16 +18,16 @@ function RegisterForm() {
 
   const handleClickNext = () => {
     form
-      .validateFields()
-      .then((values) => {
-        localStorage.setItem('stepOne', JSON.stringify(values));
-        if(values.name_user.length < 5) {
-          toast.error('Por favor, insira um nome com mais de 5 caracteres', 2)
-        }else{
-          window.location.href='/register-step-two';
-        }
-      })
-      .catch((err) => console.log(err));
+    .validateFields()
+    .then((values) => {
+      localStorage.setItem('stepOne', JSON.stringify(values));
+      if(checkCpf(values.cpf)){
+        window.location.href='/register-step-two';
+      }else{
+        toast.error('Cpf inválido', 2)
+      }
+    })
+    .catch((err) => console.log(err));
   };
 
   return(
@@ -36,11 +37,12 @@ function RegisterForm() {
         <FormOne>
           <Form className="container-form" name='step-one' form={form} onFinish={handleClickNext}>
             <Form.Item 
-              name="name_user"
+              name="name"
               className="label"
               label="NOME"
+              rules={[{ required: true, message: 'Insira seu nome' }]}
             >
-              <Input className="input" required minLength='2' />
+              <Input className="input" minLength={3} onKeyUp={validateName} maxLength={50} />
             </Form.Item>
             <Form.Item 
               name="cpf"
@@ -59,19 +61,20 @@ function RegisterForm() {
               name="email"
               className="label"
               label="E-MAIL"
+              rules={[{ required: true, validator: validateEmail }]}
             >
-              <Input className="input" required />
+              <Input className="input" />
             </Form.Item>
             <Form.Item
               label="CELULAR"
               className="label"
               name="phone"
+              rules={[{ required: true, validator: validatePhone }]}
             >
               <MaskedInput
                 name="phone"
                 placeholder="(11) 11111-1111"
                 mask="(11) 11111-1111"
-                required
                 className="input"
               >
               </MaskedInput>

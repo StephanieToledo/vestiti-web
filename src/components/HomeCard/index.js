@@ -55,8 +55,8 @@ function HomeCard({products}) {
 						</div>
 					</div>
 					<div className="container-price-cart">
-						<h4>R$ {product.old_price}</h4>
-						<h3>R$ {product.actual_price}</h3>
+						<h4>R$ {product.old_price.replace(".", ",")}</h4>
+						<h3>R$ {product.actual_price.replace(".", ",")}</h3>
 					</div>
 					<div className="content-fav-cart">
 						<div onClick={() => addFavorite(product)}>

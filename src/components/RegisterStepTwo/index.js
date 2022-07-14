@@ -42,7 +42,6 @@ function RegisterForm() {
       .catch((err) => console.log(err));
   };
 
-
   return(
     <>
     <Container>
@@ -53,10 +52,10 @@ function RegisterForm() {
               name="cep"
               className="label"
               label="CEP"
+              rules={[{ required: true, message: 'Insira seu cep' }]}
             >
               <MaskedInput
-               className="input" 
-               required 
+               className="input"
                mask="11111-111"
                onBlur={searchCep}
                />
@@ -65,29 +64,33 @@ function RegisterForm() {
               name="address"
               className="label"
               label="Endereço"
+              rules={[{ required: true, message: 'Insira seu endereço' }]}
             >
-              <Input className="input" name="address" required />
+              <Input className="input" name="address" />
             </Form.Item>
             <Form.Item 
               name="neighborhood"
               className="label"
               label="Bairro"
+              rules={[{ required: true, message: 'Insira seu bairro' }]}
             >
-              <Input className="input" name="neighborhood" required />
+              <Input className="input" name="neighborhood" />
             </Form.Item>
             <Form.Item 
               name="number"
               className="label"
               label="Número"
+              rules={[{ required: true, message: 'Insira seu número' }]}
             >
-              <Input className="input" name="number" required />
+              <Input className="input" name="number" />
             </Form.Item>
             <Form.Item 
               name="uf"
               className="label"
               label="Estado"
+              rules={[{ required: true, message: 'Insira seu estado' }]}
             >
-              <Input className="input" name="uf" required maxLength={2} />
+              <Input className="input" name="uf" maxLength={2} />
             </Form.Item>
             <Form.Item>
               <Button htmlType="submit" className='button-submit'>

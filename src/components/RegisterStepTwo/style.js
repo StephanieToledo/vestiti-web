@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 550px;
+  height: 600px;
   display: flex;
   margin-top: 50px;
   justify-content: center;
@@ -19,7 +19,7 @@ export const Register = styled.div`
 `;
 
 export const FormTwo = styled.div`
-  width: 50%;
+  width: 80%;
   height: inherit;
   justify-content: center;
   display: flex;
