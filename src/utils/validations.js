@@ -1,10 +1,7 @@
 import { toast } from "react-toastify"
 
-export function checkCpf(cpf) {
-	if(!cpf) return false
-	cpf = cpf.replace(".", "").replace(".", "").replace("-", "")
-
-	const validateCpf = cpf
+export function checkCpf(_, value) {
+	const valueFormat = value.replace(/\D/g, "")
 
 	const invalidsCpfs = [
 		'00000000000', 
@@ -19,8 +16,16 @@ export function checkCpf(cpf) {
 		'99999999999'
 	]
 
-	if(invalidsCpfs.includes(validateCpf)) return false
-	return true
+	if(!valueFormat) {
+		return Promise.reject('Insira um cpf')
+	}
+
+	const validate = invalidsCpfs.includes(valueFormat)
+
+	if(!validate) {
+		toast.error('Cpf inválido', 2)
+		return Promise.reject()
+	}
 }
 
 export async function validatePhone(_, value) {
@@ -44,7 +49,7 @@ export async function validatePhone(_, value) {
 
 	const validate = invalidsPhones.includes(value)
 
-	if(validate) {
+	if(!validate) {
 		toast.error('Número de celular inválido', 2)
 		return Promise.reject()
 	}

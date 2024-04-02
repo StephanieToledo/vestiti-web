@@ -48,11 +48,11 @@ function RegisterForm() {
               name="cpf"
               className="label"
               label="CPF"
+              rules={[{ required: true, validator: checkCpf }]}
             >
-              <MaskedInput
+               <MaskedInput
                 name="cpf"
                 mask="111.111.111-11"
-                required
                 className="input"
               >
               </MaskedInput>

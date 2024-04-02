@@ -61,8 +61,12 @@ export const ContainerMenu = styled.div`
      border-radius: 50px;
      background-color: #342940;
      position: absolute;
-     right: 200px;
+     right: 180px;
      top: 15px;
+
+     p {
+      margin: auto;
+     }
    }
 
    .quantity {
@@ -74,8 +78,12 @@ export const ContainerMenu = styled.div`
      border-radius: 50px;
      background-color: #342940;
      position: absolute;
-     right: 70px;
+     right: 65px;
      top: 15px;
+
+     p {
+      margin: auto;
+     }
    }
 
    p {

@@ -37,7 +37,7 @@ export function Cart() {
 						</Counter>
 						<Price>
 							<h2>Total</h2>
-							<h3>R$ {product.actual_price.replace(".", ",")}</h3>
+							<h3>R$ {product.actual_price}</h3>
 						</Price>
 					</div>
 				</Content><Divider /></>

@@ -36,6 +36,9 @@ export const FormOne = styled.div`
 
   .label {
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     font-weight: bold;
   }
 

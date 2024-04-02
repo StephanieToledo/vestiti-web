@@ -15,8 +15,8 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-	width: 300px;
-	height: 470px;
+	width: 310px;
+	height: 490px;
 	border: 1px solid;
 	border-color: #BFBFBF;
 	margin-top: 1em;
